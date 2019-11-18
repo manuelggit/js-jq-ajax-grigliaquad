@@ -11,6 +11,7 @@
 
 .quadrato {
   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   float: left;
@@ -21,6 +22,9 @@
 }
 
 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 70%;
 }

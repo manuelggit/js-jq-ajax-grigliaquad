@@ -32,20 +32,21 @@ function cliccaQuadrato(){
 
       success: function(numeroRandom) {
         var numero = numeroRandom.response;
+        console.log(numero);
+        quadratoSelezionato.html(numero); // stampo il numero all'interno del quadratoSelezionato
         if (numero <= 5) {
           $(quadratoSelezionato).css("background", "yellow");
         } else if(numero > 5){
           $(quadratoSelezionato).css("background", "green");
         }
+      },
 
       error: function(errore) {
-        alert("C'è un errore, ed è: " errore);
+        alert("C'è un errore, ed è: ", errore);
       }
 
-      }
-  })
 
-
+    })
 
   });
 
