@@ -24,5 +24,25 @@ function cliccaQuadrato(){
 
   $('.quadrato').click(function(){
     var quadratoSelezionato = $(this);
+    console.log(quadratoSelezionato);
+
+    $.ajax({
+      url : "https://flynn.boolean.careers/exercises/api/random/int",
+      method : "GET",
+
+      success: function(numeroRandom) {
+        var numero = numeroRandom.response;
+        if (numero <= 5) {
+          $(quadratoSelezionato).css("background", "yellow");
+        } else if(numero > 5){
+          $(quadratoSelezionato).css("background", "green");
+        }
+
+      }
   })
-}
+
+
+
+  });
+
+};
