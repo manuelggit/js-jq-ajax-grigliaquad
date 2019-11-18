@@ -38,6 +38,10 @@ function cliccaQuadrato(){
           $(quadratoSelezionato).css("background", "green");
         }
 
+      error: function(errore) {
+        alert("C'è un errore, ed è: " errore);
+      }
+
       }
   })
 
