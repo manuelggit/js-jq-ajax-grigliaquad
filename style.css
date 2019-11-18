@@ -10,9 +10,17 @@
 }
 
 .quadrato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float: left;
   background: white;
   width: 15%;
   height: 100px;
   border: 1px solid black;
+}
+
+span {
+  width: 50%;
+  height: 70%;
 }

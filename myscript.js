@@ -6,12 +6,23 @@
 $('document').ready(function(){
 
   generaCelle();
+  cliccaQuadrato();
 
 });
 
+//funzione per generare la griglia
 function generaCelle() {
+
   for(var i = 0; i < 36; i++){
-    $('#container').append('<div class="quadrato"></div>');
+    $('#container').append('<div class="quadrato"><span></span></div>');
   }
 
+}
+
+// funzione per la selezione del quadrato
+function cliccaQuadrato(){
+
+  $('.quadrato').click(function(){
+    var quadratoSelezionato = $(this);
+  })
 }
