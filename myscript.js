@@ -14,7 +14,7 @@ $('document').ready(function(){
 function generaCelle() {
 
   for(var i = 0; i < 36; i++){
-    $('#container').append('<div class="quadrato"><span></span></div>');
+    $('#container').append('<div class="quadrato"><span></span></div>'); //creo 36 quadrati
   }
 
 }
@@ -23,7 +23,7 @@ function generaCelle() {
 function cliccaQuadrato(){
 
   $('.quadrato').click(function(){
-    var quadratoSelezionato = $(this);
+    var quadratoSelezionato = $(this); //il quadrato selezionato è quello che seleziono al click
     console.log(quadratoSelezionato);
 
     $.ajax({
@@ -32,19 +32,19 @@ function cliccaQuadrato(){
 
       success: function(numeroRandom) {
         var numero = numeroRandom.response;
-        console.log(numero);
-        quadratoSelezionato.html(numero); // stampo il numero all'interno del quadratoSelezionato
-        if (numero <= 5) {
-          $(quadratoSelezionato).css("background", "yellow");
-        } else if(numero > 5){
-          $(quadratoSelezionato).css("background", "green");
+        console.log(numero); // stampo il numero che esce
+        quadratoSelezionato.html(numero); // stampo il numero all'interno del quadratoSelezionato (in pagina)
+        if (numero <= 5) { //se "numero" è minore o uguale a 5
+          $(quadratoSelezionato).css("background", "yellow"); //lo rendo giallo
+        } else if(numero > 5){ //altrimenti
+          $(quadratoSelezionato).css("background", "green"); //lo rendo verde
         }
+        quadratoSelezionato.off('click'); // disattivo il click sul quadratoSelezionato
       },
 
       error: function(errore) {
         alert("C'è un errore, ed è: ", errore);
       }
-
 
     })
 
